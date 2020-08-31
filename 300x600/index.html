@@ -1,0 +1,82 @@
+<head>
+  <link rel="dns-prefetch" href="//s0.2mdn.net/" />
+  <link rel="dns-prefetch" href="//ajax.googleapis.com/" />
+  <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <script>
+    if (!Enabler.isInitialized()) {
+      Enabler.addEventListener(
+        studio.events.StudioEvent.INIT,
+        enablerInitialized
+      );
+    } else {
+      enablerInitialized();
+    }
+
+    function enablerInitialized() {
+      function lib(src) {
+        var js = document.createElement("script");
+        js.src = src;
+        document.querySelector("#container").appendChild(js);
+      }
+
+      lib("enablerinit.js");
+      // lib("templates.js");
+      lib("variableparser.js");
+      lib("assignator.js");
+      lib("animations.js");
+
+      if (!Enabler.isVisible()) {
+        Enabler.addEventListener(studio.events.StudioEvent.VISIBLE, adVisible);
+      } else {
+        adVisible();
+      }
+    }
+
+    function adVisible() {
+      // Ad visible, start ad/animation.
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+
+
+  <!-- Loader -->
+  <!-- <div id="contLoading">
+      <div id="loading"></div>
+    </div> -->
+  <div id="container">
+    <div class="frame1">
+      <img class="logo" src="" />
+      <!-- <p class="cpf11"></p>
+    <p class="cpf12"></p> -->
+      <p class="txt1">
+        <span class="cpf11"></span>
+        <span class="cpf12"></span>
+      </p>
+      <img class="imbg" src="" />
+      <img class="fig" src="" />
+    </div>
+    <div class="frame2">
+      <img class="logo2" src="" />
+
+      <p class="txt2">
+        <span class="cpf21"></span>
+        <span class="cpf22"></span>
+        <span class="cpf23"></span>
+        <span class="cpf24"></span>
+        <span class="cpf25"></span>
+      </p>
+      <img class="cta" src="" />
+    </div>
+    <p class="disc"></p>
+  </div>
+</body>
